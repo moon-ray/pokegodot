@@ -1,0 +1,246 @@
+[gd_scene load_steps=14 format=3 uid="uid://qovl8kw56klq"]
+
+[ext_resource type="Texture2D" uid="uid://bn3l8iyf3ijla" path="res://sprites/ui/panel.png" id="1_tb8mp"]
+[ext_resource type="Theme" uid="uid://c3xhvqgsma0jb" path="res://fonts/theme.tres" id="1_whnm2"]
+[ext_resource type="Texture2D" uid="uid://dj8ny4klcv7xt" path="res://sprites/ui/arrow.png" id="2_dstve"]
+[ext_resource type="Script" path="res://scripts/box.gd" id="3_11p87"]
+
+[sub_resource type="Animation" id="Animation_ha508"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_0r46r"]
+resource_name = "scroll"
+length = 0.3
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4t46k"]
+_data = {
+"RESET": SubResource("Animation_ha508"),
+"scroll": SubResource("Animation_0r46r")
+}
+
+[sub_resource type="Animation" id="Animation_pq7ge"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_yr0m5"]
+resource_name = "blink"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_47i5x"]
+_data = {
+"RESET": SubResource("Animation_pq7ge"),
+"blink": SubResource("Animation_yr0m5")
+}
+
+[sub_resource type="Animation" id="Animation_x6vkf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Color:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_go5ee"]
+resource_name = "warp"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Color:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.54902), Color(1, 1, 1, 1), Color(1, 1, 1, 0.54902), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ieuao"]
+_data = {
+"RESET": SubResource("Animation_x6vkf"),
+"warp": SubResource("Animation_go5ee")
+}
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="Main" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -360.0
+offset_right = 400.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_whnm2")
+
+[node name="guide" type="ColorRect" parent="Main"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.741176, 0.360784, 0.584314, 1)
+
+[node name="box" type="NinePatchRect" parent="Main"]
+layout_mode = 0
+offset_top = 480.0
+offset_right = 160.0
+offset_bottom = 528.0
+scale = Vector2(5, 5)
+texture = ExtResource("1_tb8mp")
+patch_margin_left = 7
+patch_margin_top = 7
+patch_margin_right = 7
+patch_margin_bottom = 7
+script = ExtResource("3_11p87")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Main/box"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 13.0
+offset_right = 146.0
+offset_bottom = 40.0
+text = "z"
+fit_content = true
+scroll_active = false
+visible_characters_behavior = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Main/box"]
+libraries = {
+"": SubResource("AnimationLibrary_4t46k")
+}
+
+[node name="Arrow" type="TextureRect" parent="Main/box"]
+visible = false
+layout_mode = 0
+offset_left = 153.6
+offset_top = 36.8
+offset_right = 158.6
+offset_bottom = 43.8
+rotation = 1.5708
+texture = ExtResource("2_dstve")
+
+[node name="blinker" type="AnimationPlayer" parent="Main/box/Arrow"]
+libraries = {
+"": SubResource("AnimationLibrary_47i5x")
+}
+
+[node name="Prompt" type="NinePatchRect" parent="Main/box"]
+layout_mode = 0
+offset_left = 105.0
+offset_top = -34.0
+offset_right = 160.0
+texture = ExtResource("1_tb8mp")
+patch_margin_left = 7
+patch_margin_top = 7
+patch_margin_right = 7
+patch_margin_bottom = 7
+
+[node name="Options" type="RichTextLabel" parent="Main/box/Prompt"]
+layout_mode = 1
+offset_left = 14.6
+offset_top = 3.4
+offset_right = 51.6
+offset_bottom = 42.4
+text = "S
+s
+s
+s"
+fit_content = true
+visible_characters_behavior = 3
+
+[node name="Arrow" type="TextureRect" parent="Main/box/Prompt"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -19.7
+offset_top = -10.2
+offset_right = -14.7
+offset_bottom = -3.2
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_dstve")
+
+[node name="Color" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Color"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_ieuao")
+}
+
+[connection signal="animation_finished" from="Main/box/AnimationPlayer" to="Main/box" method="_on_scrolling_finished"]
+[connection signal="animation_finished" from="Main/box/Arrow/blinker" to="Main/box" method="_on_blinker_finished"]

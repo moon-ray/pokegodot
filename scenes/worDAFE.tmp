@@ -1,0 +1,337 @@
+[gd_scene load_steps=27 format=3 uid="uid://ck6ve7yajeho0"]
+
+[ext_resource type="Script" path="res://scripts/_world.gd" id="1_c6hlk"]
+[ext_resource type="Texture2D" uid="uid://6wsjiq1co628" path="res://sprites/maps/1f-pallet.png" id="2_i6flv"]
+[ext_resource type="Texture2D" uid="uid://bl87d0s441g8v" path="res://sprites/maps/2f-pallet.png" id="2_yuk25"]
+[ext_resource type="Script" path="res://scripts/MapBounds.gd" id="3_tg78s"]
+[ext_resource type="Texture2D" uid="uid://bmyi0x2bcjm1v" path="res://sprites/maps/pallet-town.png" id="4_fn806"]
+[ext_resource type="Script" path="res://scripts/warp.gd" id="5_tq1t1"]
+[ext_resource type="PackedScene" uid="uid://chju85v471oe5" path="res://player.tscn" id="5_ylivs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_isc55"]
+size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_chhkl"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t2scs"]
+size = Vector2(128, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_disqs"]
+size = Vector2(112, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mgib3"]
+size = Vector2(48, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0dm6q"]
+size = Vector2(16, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ptf0f"]
+size = Vector2(16, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hg42c"]
+size = Vector2(320, 288)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aqst4"]
+size = Vector2(16, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n864o"]
+size = Vector2(64, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cub7a"]
+size = Vector2(32, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bymit"]
+size = Vector2(32, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vy2if"]
+size = Vector2(96, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d6mkh"]
+size = Vector2(48, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bteew"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_orugh"]
+size = Vector2(128, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ds5w7"]
+size = Vector2(16, 272)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_odb07"]
+size = Vector2(144, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vb2wq"]
+size = Vector2(176, 16)
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_c6hlk")
+
+[node name="Maps" type="Node2D" parent="."]
+
+[node name="1f-pallet" type="Sprite2D" parent="Maps"]
+position = Vector2(-2432, 256)
+scale = Vector2(4, 4)
+texture = ExtResource("2_i6flv")
+
+[node name="MapBounds" type="Area2D" parent="Maps/1f-pallet"]
+script = ExtResource("3_tg78s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Maps/1f-pallet/MapBounds"]
+shape = SubResource("RectangleShape2D_isc55")
+
+[node name="Pallet" type="Area2D" parent="Maps/1f-pallet"]
+position = Vector2(-8, 56)
+script = ExtResource("5_tq1t1")
+warp_type = 1
+direction_after_warp = 3
+warp_to = Vector2(-2464, 480)
+sound_effect = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Maps/1f-pallet/Pallet"]
+shape = SubResource("RectangleShape2D_chhkl")
+
+[node name="2f-pallet" type="Sprite2D" parent="Maps"]
+position = Vector2(-960, 256)
+scale = Vector2(4, 4)
+texture = ExtResource("2_yuk25")
+
+[node name="MapBounds" type="Area2D" parent="Maps/2f-pallet"]
+script = ExtResource("3_tg78s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Maps/2f-pallet/MapBounds"]
+shape = SubResource("RectangleShape2D_isc55")
+
+[node name="Collisions" type="StaticBody2D" parent="Maps/2f-pallet"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Maps/2f-pallet/Collisions"]
+position = Vector2(0, -72)
+shape = SubResource("RectangleShape2D_t2scs")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Maps/2f-pallet/Collisions"]
+position = Vector2(-8, -56)
+shape = SubResource("RectangleShape2D_disqs")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Maps/2f-pallet/Collisions"]
+position = Vector2(-40, -40)
+shape = SubResource("RectangleShape2D_mgib3")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Maps/2f-pallet/Collisions"]
+position = Vector2(-8, 16)
+shape = SubResource("RectangleShape2D_0dm6q")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Maps/2f-pallet/Collisions"]
+position = Vector2(-56, 48)
+shape = SubResource("RectangleShape2D_0dm6q")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Maps/2f-pallet/Collisions"]
+position = Vector2(40, 48)
+shape = SubResource("RectangleShape2D_0dm6q")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Maps/2f-pallet/Collisions"]
+position = Vector2(0, 72)
+shape = SubResource("RectangleShape2D_t2scs")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Maps/2f-pallet/Collisions"]
+position = Vector2(-72, 0)
+shape = SubResource("RectangleShape2D_ptf0f")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Maps/2f-pallet/Collisions"]
+position = Vector2(72, 0)
+shape = SubResource("RectangleShape2D_ptf0f")
+
+[node name="Warps" type="Node2D" parent="Maps/2f-pallet"]
+
+[node name="PHouse2" type="Area2D" parent="Maps/2f-pallet/Warps"]
+position = Vector2(56, -56)
+script = ExtResource("5_tq1t1")
+warp_type = 2
+direction_after_warp = 3
+warp_to = Vector2(352, 352)
+move_one_after = true
+sound_effect = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Maps/2f-pallet/Warps/PHouse2"]
+shape = SubResource("RectangleShape2D_chhkl")
+
+[node name="Pallet" type="Sprite2D" parent="Maps"]
+position = Vector2(640, 576)
+scale = Vector2(4, 4)
+texture = ExtResource("4_fn806")
+
+[node name="MapBounds" type="Area2D" parent="Maps/Pallet"]
+script = ExtResource("3_tg78s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Maps/Pallet/MapBounds"]
+shape = SubResource("RectangleShape2D_hg42c")
+
+[node name="Collision" type="StaticBody2D" parent="Maps/Pallet"]
+
+[node name="PHouse" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(-88, -72)
+shape = SubResource("RectangleShape2D_aqst4")
+
+[node name="PHouse2" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(-64, -80)
+shape = SubResource("RectangleShape2D_n864o")
+
+[node name="PHouse3" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(-48, -72)
+shape = SubResource("RectangleShape2D_cub7a")
+
+[node name="RHouse1" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(40, -72)
+shape = SubResource("RectangleShape2D_aqst4")
+
+[node name="RHouse2" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(64, -80)
+shape = SubResource("RectangleShape2D_n864o")
+
+[node name="RHouse3" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(80, -72)
+shape = SubResource("RectangleShape2D_cub7a")
+
+[node name="OakLab4" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(16, 24)
+shape = SubResource("RectangleShape2D_bymit")
+
+[node name="OakLab5" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(48, 8)
+shape = SubResource("RectangleShape2D_vy2if")
+
+[node name="OakLab6" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(72, 24)
+shape = SubResource("RectangleShape2D_d6mkh")
+
+[node name="PSign" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(-104, -56)
+shape = SubResource("RectangleShape2D_bteew")
+
+[node name="Sign" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(-40, 8)
+shape = SubResource("RectangleShape2D_bteew")
+
+[node name="Sign2" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(56, 72)
+shape = SubResource("RectangleShape2D_bteew")
+
+[node name="Log" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(-136, 136)
+shape = SubResource("RectangleShape2D_bteew")
+
+[node name="Log2" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(-40, -136)
+shape = SubResource("RectangleShape2D_bteew")
+
+[node name="Log3" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(8, -136)
+shape = SubResource("RectangleShape2D_bteew")
+
+[node name="Log4" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(-104, -136)
+shape = SubResource("RectangleShape2D_bteew")
+
+[node name="Log5" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(136, -136)
+shape = SubResource("RectangleShape2D_bteew")
+
+[node name="Fence" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(-56, 8)
+shape = SubResource("RectangleShape2D_bteew")
+
+[node name="Fence2" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(-72, 8)
+shape = SubResource("RectangleShape2D_bteew")
+
+[node name="Fence3" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(-88, 8)
+shape = SubResource("RectangleShape2D_bteew")
+
+[node name="Fence4" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(8, 72)
+shape = SubResource("RectangleShape2D_bteew")
+
+[node name="Fence5" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(24, 72)
+shape = SubResource("RectangleShape2D_bteew")
+
+[node name="Fence6" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(40, 72)
+shape = SubResource("RectangleShape2D_bteew")
+
+[node name="Fence7" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(72, 72)
+shape = SubResource("RectangleShape2D_bteew")
+
+[node name="Fence8" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(88, 72)
+shape = SubResource("RectangleShape2D_bteew")
+
+[node name="Logs" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(-96, -120)
+shape = SubResource("RectangleShape2D_orugh")
+
+[node name="Logs4" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(-152, 8)
+shape = SubResource("RectangleShape2D_ds5w7")
+
+[node name="Logs5" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(152, 8)
+shape = SubResource("RectangleShape2D_ds5w7")
+
+[node name="Logs2" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(72, -120)
+shape = SubResource("RectangleShape2D_odb07")
+
+[node name="Logs3" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(56, 136)
+shape = SubResource("RectangleShape2D_vb2wq")
+
+[node name="RSign" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(24, -56)
+shape = SubResource("RectangleShape2D_bteew")
+
+[node name="Warps" type="Node2D" parent="Maps/Pallet"]
+
+[node name="PHouse" type="Area2D" parent="Maps/Pallet/Warps"]
+position = Vector2(-72, -56)
+script = ExtResource("5_tq1t1")
+warp_type = 2
+direction_after_warp = 2
+warp_to = Vector2(-2464, 480)
+sound_effect = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Maps/Pallet/Warps/PHouse"]
+shape = SubResource("RectangleShape2D_chhkl")
+
+[node name="RHouse" type="Area2D" parent="Maps/Pallet/Warps"]
+position = Vector2(56, -56)
+script = ExtResource("5_tq1t1")
+warp_type = 2
+direction_after_warp = 3
+warp_to = Vector2(-736, 32)
+move_one_after = true
+sound_effect = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Maps/Pallet/Warps/RHouse"]
+shape = SubResource("RectangleShape2D_chhkl")
+
+[node name="Player" parent="." instance=ExtResource("5_ylivs")]
+position = Vector2(352, 416)
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[connection signal="area_entered" from="Maps/1f-pallet/MapBounds" to="." method="_on_map_bounds_area_entered"]
+[connection signal="area_entered" from="Maps/1f-pallet/MapBounds" to="Maps/1f-pallet/MapBounds" method="_on_area_entered"]
+[connection signal="area_exited" from="Maps/1f-pallet/MapBounds" to="Maps/1f-pallet/MapBounds" method="_on_area_exited"]
+[connection signal="area_entered" from="Maps/1f-pallet/Pallet" to="Maps/1f-pallet/Pallet" method="_on_area_entered"]
+[connection signal="area_entered" from="Maps/2f-pallet/MapBounds" to="." method="_on_map_bounds_area_entered"]
+[connection signal="area_entered" from="Maps/2f-pallet/MapBounds" to="Maps/2f-pallet/MapBounds" method="_on_area_entered"]
+[connection signal="area_exited" from="Maps/2f-pallet/MapBounds" to="Maps/2f-pallet/MapBounds" method="_on_area_exited"]
+[connection signal="area_entered" from="Maps/2f-pallet/Warps/PHouse2" to="Maps/2f-pallet/Warps/PHouse2" method="_on_area_entered"]
+[connection signal="area_entered" from="Maps/Pallet/MapBounds" to="." method="_on_map_bounds_area_entered"]
+[connection signal="area_entered" from="Maps/Pallet/MapBounds" to="Maps/Pallet/MapBounds" method="_on_area_entered"]
+[connection signal="area_exited" from="Maps/Pallet/MapBounds" to="Maps/Pallet/MapBounds" method="_on_area_exited"]
+[connection signal="area_entered" from="Maps/Pallet/Warps/PHouse" to="Maps/Pallet/Warps/PHouse" method="_on_area_entered"]
+[connection signal="area_entered" from="Maps/Pallet/Warps/RHouse" to="Maps/Pallet/Warps/RHouse" method="_on_area_entered"]

@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://fto1buf72kyq"]
+
+[ext_resource type="Script" path="res://scripts/grass.gd" id="1_m8spx"]
+[ext_resource type="Texture2D" uid="uid://dhdp6aufrr8s8" path="res://sprites/maps/grass-overlay.png" id="2_h0sog"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6p0ct"]
+size = Vector2(64, 16)
+
+[node name="Grass" type="Node2D"]
+position = Vector2(0, -4)
+
+[node name="Grass" type="Area2D" parent="."]
+script = ExtResource("1_m8spx")
+
+[node name="Sprite" type="Sprite2D" parent="Grass"]
+z_index = 255
+position = Vector2(0, -12)
+scale = Vector2(4, 4)
+texture = ExtResource("2_h0sog")
+vframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grass"]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_6p0ct")
+
+[node name="Grass2" type="Area2D" parent="."]
+position = Vector2(0, 4)
+script = ExtResource("1_m8spx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grass2"]
+position = Vector2(0, 18)
+shape = SubResource("RectangleShape2D_6p0ct")
+
+[node name="Sprite" type="Sprite2D" parent="Grass2"]
+z_index = 255
+position = Vector2(0, 16)
+scale = Vector2(4, 4)
+texture = ExtResource("2_h0sog")
+vframes = 2
+frame = 1

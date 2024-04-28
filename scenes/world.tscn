@@ -1,0 +1,983 @@
+[gd_scene load_steps=53 format=3 uid="uid://ck6ve7yajeho0"]
+
+[ext_resource type="Script" path="res://scripts/_world.gd" id="1_c6hlk"]
+[ext_resource type="Texture2D" uid="uid://6wsjiq1co628" path="res://sprites/maps/1f-pallet.png" id="2_i6flv"]
+[ext_resource type="Texture2D" uid="uid://c2fpooyj4shh1" path="res://sprites/maps/route-1.png" id="2_mitpb"]
+[ext_resource type="Texture2D" uid="uid://bl87d0s441g8v" path="res://sprites/maps/2f-pallet.png" id="2_yuk25"]
+[ext_resource type="Script" path="res://scripts/MapBounds.gd" id="3_tg78s"]
+[ext_resource type="PackedScene" uid="uid://dhb853jwjqhqc" path="res://scenes/ledge.tscn" id="4_8jjbi"]
+[ext_resource type="Texture2D" uid="uid://bmyi0x2bcjm1v" path="res://sprites/maps/pallet-town.png" id="4_fn806"]
+[ext_resource type="Script" path="res://scripts/warp.gd" id="5_tq1t1"]
+[ext_resource type="PackedScene" uid="uid://chju85v471oe5" path="res://player.tscn" id="5_ylivs"]
+[ext_resource type="Texture2D" uid="uid://c8miup5blyv1c" path="res://sprites/maps/rival-house.png" id="7_j5m8r"]
+[ext_resource type="PackedScene" uid="uid://fto1buf72kyq" path="res://scenes/grass.tscn" id="8_6nk5q"]
+[ext_resource type="Texture2D" uid="uid://bqjicp2jkhnqk" path="res://sprites/maps/oak-lab.png" id="10_061fw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i3702"]
+size = Vector2(320, 576)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ldha8"]
+size = Vector2(144, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8rmok"]
+size = Vector2(32, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_el5u5"]
+size = Vector2(16, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rh0j1"]
+size = Vector2(16, 576)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rnf3f"]
+size = Vector2(80, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ej4gr"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhgww"]
+size = Vector2(80, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_83e7y"]
+size = Vector2(64, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_28ikp"]
+size = Vector2(48, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_woh4k"]
+size = Vector2(128, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tgs6w"]
+size = Vector2(16, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_isc55"]
+size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_chhkl"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2585o"]
+size = Vector2(32, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t2scs"]
+size = Vector2(128, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ptf0f"]
+size = Vector2(16, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_disqs"]
+size = Vector2(112, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mgib3"]
+size = Vector2(48, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0dm6q"]
+size = Vector2(16, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hg42c"]
+size = Vector2(320, 288)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aqst4"]
+size = Vector2(16, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n864o"]
+size = Vector2(64, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cub7a"]
+size = Vector2(32, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bymit"]
+size = Vector2(32, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vy2if"]
+size = Vector2(96, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d6mkh"]
+size = Vector2(48, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bteew"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_orugh"]
+size = Vector2(128, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ds5w7"]
+size = Vector2(16, 272)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_odb07"]
+size = Vector2(144, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vb2wq"]
+size = Vector2(176, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b6oq2"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5pp6v"]
+size = Vector2(16, 192)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l3586"]
+size = Vector2(160, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shak5"]
+size = Vector2(160, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_movng"]
+size = Vector2(64, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ng671"]
+size = Vector2(48, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qu6j7"]
+size = Vector2(160, 192)
+
+[sub_resource type="Environment" id="Environment_sw3rl"]
+background_mode = 1
+background_color = Color(1, 0.388235, 0.835294, 1)
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_c6hlk")
+
+[node name="Maps" type="Node2D" parent="."]
+
+[node name="Route-1" type="Sprite2D" parent="Maps"]
+position = Vector2(640, -1152)
+scale = Vector2(4, 4)
+texture = ExtResource("2_mitpb")
+
+[node name="MapBounds" type="Area2D" parent="Maps/Route-1"]
+script = ExtResource("3_tg78s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Maps/Route-1/MapBounds"]
+shape = SubResource("RectangleShape2D_i3702")
+
+[node name="Collision" type="StaticBody2D" parent="Maps/Route-1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Maps/Route-1/Collision"]
+position = Vector2(40, 152)
+shape = SubResource("RectangleShape2D_ldha8")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Maps/Route-1/Collision"]
+position = Vector2(-112, 152)
+shape = SubResource("RectangleShape2D_8rmok")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Maps/Route-1/Collision"]
+position = Vector2(-40, 256)
+shape = SubResource("RectangleShape2D_el5u5")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Maps/Route-1/Collision"]
+position = Vector2(8, 256)
+shape = SubResource("RectangleShape2D_el5u5")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Maps/Route-1/Collision"]
+position = Vector2(-136, 0)
+shape = SubResource("RectangleShape2D_rh0j1")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Maps/Route-1/Collision"]
+position = Vector2(104, 0)
+shape = SubResource("RectangleShape2D_rh0j1")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Maps/Route-1/Collision"]
+position = Vector2(-88, 232)
+shape = SubResource("RectangleShape2D_rnf3f")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Maps/Route-1/Collision"]
+position = Vector2(56, 232)
+shape = SubResource("RectangleShape2D_rnf3f")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Maps/Route-1/Collision"]
+position = Vector2(56, -264)
+shape = SubResource("RectangleShape2D_rnf3f")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Maps/Route-1/Collision"]
+position = Vector2(-88, -264)
+shape = SubResource("RectangleShape2D_rnf3f")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Maps/Route-1/Collision"]
+position = Vector2(-40, -264)
+shape = SubResource("RectangleShape2D_ej4gr")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Maps/Route-1/Collision"]
+position = Vector2(-40, -280)
+shape = SubResource("RectangleShape2D_ej4gr")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Maps/Route-1/Collision"]
+position = Vector2(8, -280)
+shape = SubResource("RectangleShape2D_ej4gr")
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Maps/Route-1/Collision"]
+position = Vector2(8, -264)
+shape = SubResource("RectangleShape2D_ej4gr")
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="Maps/Route-1/Collision"]
+position = Vector2(-120, 24)
+shape = SubResource("RectangleShape2D_ej4gr")
+
+[node name="CollisionShape2D22" type="CollisionShape2D" parent="Maps/Route-1/Collision"]
+position = Vector2(24, -72)
+shape = SubResource("RectangleShape2D_ej4gr")
+
+[node name="CollisionShape2D28" type="CollisionShape2D" parent="Maps/Route-1/Collision"]
+position = Vector2(-40, 152)
+shape = SubResource("RectangleShape2D_ej4gr")
+
+[node name="CollisionShape2D23" type="CollisionShape2D" parent="Maps/Route-1/Collision"]
+position = Vector2(-88, -136)
+shape = SubResource("RectangleShape2D_bhgww")
+
+[node name="CollisionShape2D24" type="CollisionShape2D" parent="Maps/Route-1/Collision"]
+position = Vector2(-88, -200)
+shape = SubResource("RectangleShape2D_bhgww")
+
+[node name="CollisionShape2D25" type="CollisionShape2D" parent="Maps/Route-1/Collision"]
+position = Vector2(0, -200)
+shape = SubResource("RectangleShape2D_83e7y")
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="Maps/Route-1/Collision"]
+position = Vector2(-72, 24)
+shape = SubResource("RectangleShape2D_28ikp")
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="Maps/Route-1/Collision"]
+position = Vector2(88, 88)
+shape = SubResource("RectangleShape2D_28ikp")
+
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="Maps/Route-1/Collision"]
+position = Vector2(-104, -72)
+shape = SubResource("RectangleShape2D_28ikp")
+
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="Maps/Route-1/Collision"]
+position = Vector2(-56, -72)
+shape = SubResource("RectangleShape2D_28ikp")
+
+[node name="CollisionShape2D21" type="CollisionShape2D" parent="Maps/Route-1/Collision"]
+position = Vector2(-8, -72)
+shape = SubResource("RectangleShape2D_28ikp")
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="Maps/Route-1/Collision"]
+position = Vector2(32, 24)
+shape = SubResource("RectangleShape2D_woh4k")
+
+[node name="CollisionShape2D26" type="CollisionShape2D" parent="Maps/Route-1/Collision"]
+position = Vector2(-64, 88)
+shape = SubResource("RectangleShape2D_woh4k")
+
+[node name="CollisionShape2D27" type="CollisionShape2D" parent="Maps/Route-1/Collision"]
+position = Vector2(-40, -176)
+shape = SubResource("RectangleShape2D_tgs6w")
+
+[node name="Grass" type="Node2D" parent="Maps/Route-1"]
+position = Vector2(-160, 256)
+scale = Vector2(0.25, 0.25)
+
+[node name="Grass" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(544, 92)
+
+[node name="Grass2" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(608, 92)
+
+[node name="Grass3" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(544, 28)
+
+[node name="Grass4" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(608, 28)
+
+[node name="Grass9" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(160, -164)
+
+[node name="Grass10" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(224, -164)
+
+[node name="Grass11" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(160, -228)
+
+[node name="Grass12" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(224, -228)
+
+[node name="Grass13" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(288, -164)
+
+[node name="Grass14" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(352, -164)
+
+[node name="Grass15" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(288, -228)
+
+[node name="Grass16" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(352, -228)
+
+[node name="Grass17" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(288, -292)
+
+[node name="Grass18" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(352, -292)
+
+[node name="Grass19" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(288, -356)
+
+[node name="Grass20" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(352, -356)
+
+[node name="Grass21" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(416, -292)
+
+[node name="Grass22" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(480, -292)
+
+[node name="Grass23" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(416, -356)
+
+[node name="Grass24" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(480, -356)
+
+[node name="Grass25" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(672, -164)
+
+[node name="Grass26" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(736, -164)
+
+[node name="Grass27" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(672, -228)
+
+[node name="Grass28" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(736, -228)
+
+[node name="Grass29" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(800, -164)
+
+[node name="Grass30" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(864, -164)
+
+[node name="Grass31" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(800, -228)
+
+[node name="Grass32" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(864, -228)
+
+[node name="Grass33" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(800, -292)
+
+[node name="Grass34" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(864, -292)
+
+[node name="Grass35" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(800, -356)
+
+[node name="Grass36" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(864, -356)
+
+[node name="Grass37" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(928, -292)
+
+[node name="Grass38" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(992, -292)
+
+[node name="Grass39" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(928, -356)
+
+[node name="Grass40" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(992, -356)
+
+[node name="Grass5" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(544, -36)
+
+[node name="Grass6" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(608, -36)
+
+[node name="Grass7" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(544, -100)
+
+[node name="Grass8" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(608, -100)
+
+[node name="Ledges" type="Node2D" parent="Maps/Route-1"]
+
+[node name="Ledge" parent="Maps/Route-1/Ledges" instance=ExtResource("4_8jjbi")]
+
+[node name="Ledge2" parent="Maps/Route-1/Ledges" instance=ExtResource("4_8jjbi")]
+position = Vector2(-6, 142)
+
+[node name="Ledge9" parent="Maps/Route-1/Ledges" instance=ExtResource("4_8jjbi")]
+position = Vector2(-118, 142)
+
+[node name="Ledge10" parent="Maps/Route-1/Ledges" instance=ExtResource("4_8jjbi")]
+position = Vector2(-102, 142)
+
+[node name="Ledge11" parent="Maps/Route-1/Ledges" instance=ExtResource("4_8jjbi")]
+position = Vector2(74, 78)
+
+[node name="Ledge12" parent="Maps/Route-1/Ledges" instance=ExtResource("4_8jjbi")]
+position = Vector2(90, 78)
+
+[node name="Ledge13" parent="Maps/Route-1/Ledges" instance=ExtResource("4_8jjbi")]
+position = Vector2(-118, 22)
+
+[node name="Ledge14" parent="Maps/Route-1/Ledges" instance=ExtResource("4_8jjbi")]
+position = Vector2(-86, 22)
+
+[node name="Ledge15" parent="Maps/Route-1/Ledges" instance=ExtResource("4_8jjbi")]
+position = Vector2(-70, 22)
+
+[node name="Ledge16" parent="Maps/Route-1/Ledges" instance=ExtResource("4_8jjbi")]
+position = Vector2(-54, 22)
+
+[node name="Ledge17" parent="Maps/Route-1/Ledges" instance=ExtResource("4_8jjbi")]
+position = Vector2(-22, 22)
+
+[node name="Ledge18" parent="Maps/Route-1/Ledges" instance=ExtResource("4_8jjbi")]
+position = Vector2(-6, 22)
+
+[node name="Ledge19" parent="Maps/Route-1/Ledges" instance=ExtResource("4_8jjbi")]
+position = Vector2(10, 22)
+
+[node name="Ledge20" parent="Maps/Route-1/Ledges" instance=ExtResource("4_8jjbi")]
+position = Vector2(26, 22)
+
+[node name="Ledge21" parent="Maps/Route-1/Ledges" instance=ExtResource("4_8jjbi")]
+position = Vector2(42, 22)
+
+[node name="Ledge22" parent="Maps/Route-1/Ledges" instance=ExtResource("4_8jjbi")]
+position = Vector2(58, 22)
+
+[node name="Ledge23" parent="Maps/Route-1/Ledges" instance=ExtResource("4_8jjbi")]
+position = Vector2(74, 22)
+
+[node name="Ledge24" parent="Maps/Route-1/Ledges" instance=ExtResource("4_8jjbi")]
+position = Vector2(90, 22)
+
+[node name="Ledge25" parent="Maps/Route-1/Ledges" instance=ExtResource("4_8jjbi")]
+position = Vector2(-86, -82)
+
+[node name="Ledge26" parent="Maps/Route-1/Ledges" instance=ExtResource("4_8jjbi")]
+position = Vector2(-70, -82)
+
+[node name="Ledge27" parent="Maps/Route-1/Ledges" instance=ExtResource("4_8jjbi")]
+position = Vector2(-54, -82)
+
+[node name="Ledge28" parent="Maps/Route-1/Ledges" instance=ExtResource("4_8jjbi")]
+position = Vector2(-38, -82)
+
+[node name="Ledge29" parent="Maps/Route-1/Ledges" instance=ExtResource("4_8jjbi")]
+position = Vector2(-118, -146)
+
+[node name="Ledge30" parent="Maps/Route-1/Ledges" instance=ExtResource("4_8jjbi")]
+position = Vector2(-102, -146)
+
+[node name="Ledge31" parent="Maps/Route-1/Ledges" instance=ExtResource("4_8jjbi")]
+position = Vector2(-86, -146)
+
+[node name="Ledge32" parent="Maps/Route-1/Ledges" instance=ExtResource("4_8jjbi")]
+position = Vector2(-70, -146)
+
+[node name="Ledge33" parent="Maps/Route-1/Ledges" instance=ExtResource("4_8jjbi")]
+position = Vector2(-54, -146)
+
+[node name="Ledge34" parent="Maps/Route-1/Ledges" instance=ExtResource("4_8jjbi")]
+position = Vector2(-118, -210)
+
+[node name="Ledge35" parent="Maps/Route-1/Ledges" instance=ExtResource("4_8jjbi")]
+position = Vector2(-102, -210)
+
+[node name="Ledge36" parent="Maps/Route-1/Ledges" instance=ExtResource("4_8jjbi")]
+position = Vector2(-86, -210)
+
+[node name="Ledge37" parent="Maps/Route-1/Ledges" instance=ExtResource("4_8jjbi")]
+position = Vector2(-70, -210)
+
+[node name="Ledge38" parent="Maps/Route-1/Ledges" instance=ExtResource("4_8jjbi")]
+position = Vector2(-54, -210)
+
+[node name="Ledge39" parent="Maps/Route-1/Ledges" instance=ExtResource("4_8jjbi")]
+position = Vector2(-22, -210)
+
+[node name="Ledge40" parent="Maps/Route-1/Ledges" instance=ExtResource("4_8jjbi")]
+position = Vector2(-6, -210)
+
+[node name="Ledge41" parent="Maps/Route-1/Ledges" instance=ExtResource("4_8jjbi")]
+position = Vector2(10, -210)
+
+[node name="Ledge42" parent="Maps/Route-1/Ledges" instance=ExtResource("4_8jjbi")]
+position = Vector2(26, -210)
+
+[node name="Ledge3" parent="Maps/Route-1/Ledges" instance=ExtResource("4_8jjbi")]
+position = Vector2(10, 142)
+
+[node name="Ledge4" parent="Maps/Route-1/Ledges" instance=ExtResource("4_8jjbi")]
+position = Vector2(26, 142)
+
+[node name="Ledge5" parent="Maps/Route-1/Ledges" instance=ExtResource("4_8jjbi")]
+position = Vector2(42, 142)
+
+[node name="Ledge6" parent="Maps/Route-1/Ledges" instance=ExtResource("4_8jjbi")]
+position = Vector2(58, 142)
+
+[node name="Ledge7" parent="Maps/Route-1/Ledges" instance=ExtResource("4_8jjbi")]
+position = Vector2(74, 142)
+
+[node name="Ledge8" parent="Maps/Route-1/Ledges" instance=ExtResource("4_8jjbi")]
+position = Vector2(90, 142)
+
+[node name="1f-pallet" type="Sprite2D" parent="Maps"]
+position = Vector2(-2432, 256)
+scale = Vector2(4, 4)
+texture = ExtResource("2_i6flv")
+
+[node name="MapBounds" type="Area2D" parent="Maps/1f-pallet"]
+script = ExtResource("3_tg78s")
+hide = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Maps/1f-pallet/MapBounds"]
+shape = SubResource("RectangleShape2D_isc55")
+
+[node name="Warps" type="Node2D" parent="Maps/1f-pallet"]
+
+[node name="2f" type="Area2D" parent="Maps/1f-pallet/Warps"]
+position = Vector2(56, -56)
+script = ExtResource("5_tq1t1")
+warp_type = 2
+direction_after_warp = 3
+warp_to = Vector2(-736, 32)
+move_one_after = true
+sound_effect = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Maps/1f-pallet/Warps/2f"]
+shape = SubResource("RectangleShape2D_chhkl")
+
+[node name="Pallet" type="Area2D" parent="Maps/1f-pallet/Warps"]
+position = Vector2(-8, 56)
+script = ExtResource("5_tq1t1")
+warp_type = 1
+direction_after_warp = 3
+warp_to = Vector2(352, 352)
+move_one_after = true
+sound_effect = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Maps/1f-pallet/Warps/Pallet"]
+position = Vector2(-8, 0)
+shape = SubResource("RectangleShape2D_2585o")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Maps/1f-pallet"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Maps/1f-pallet/StaticBody2D"]
+position = Vector2(0, -72)
+shape = SubResource("RectangleShape2D_t2scs")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Maps/1f-pallet/StaticBody2D"]
+position = Vector2(0, 72)
+shape = SubResource("RectangleShape2D_t2scs")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Maps/1f-pallet/StaticBody2D"]
+position = Vector2(-72, 0)
+shape = SubResource("RectangleShape2D_ptf0f")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Maps/1f-pallet/StaticBody2D"]
+position = Vector2(72, 0)
+shape = SubResource("RectangleShape2D_ptf0f")
+
+[node name="2f-pallet" type="Sprite2D" parent="Maps"]
+position = Vector2(-960, 256)
+scale = Vector2(4, 4)
+texture = ExtResource("2_yuk25")
+
+[node name="MapBounds" type="Area2D" parent="Maps/2f-pallet"]
+script = ExtResource("3_tg78s")
+hide = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Maps/2f-pallet/MapBounds"]
+shape = SubResource("RectangleShape2D_isc55")
+
+[node name="Collisions" type="StaticBody2D" parent="Maps/2f-pallet"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Maps/2f-pallet/Collisions"]
+position = Vector2(0, -72)
+shape = SubResource("RectangleShape2D_t2scs")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Maps/2f-pallet/Collisions"]
+position = Vector2(-8, -56)
+shape = SubResource("RectangleShape2D_disqs")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Maps/2f-pallet/Collisions"]
+position = Vector2(-40, -40)
+shape = SubResource("RectangleShape2D_mgib3")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Maps/2f-pallet/Collisions"]
+position = Vector2(-8, 16)
+shape = SubResource("RectangleShape2D_0dm6q")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Maps/2f-pallet/Collisions"]
+position = Vector2(-56, 48)
+shape = SubResource("RectangleShape2D_0dm6q")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Maps/2f-pallet/Collisions"]
+position = Vector2(40, 48)
+shape = SubResource("RectangleShape2D_0dm6q")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Maps/2f-pallet/Collisions"]
+position = Vector2(0, 72)
+shape = SubResource("RectangleShape2D_t2scs")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Maps/2f-pallet/Collisions"]
+position = Vector2(-72, 0)
+shape = SubResource("RectangleShape2D_ptf0f")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Maps/2f-pallet/Collisions"]
+position = Vector2(72, 0)
+shape = SubResource("RectangleShape2D_ptf0f")
+
+[node name="Warps" type="Node2D" parent="Maps/2f-pallet"]
+
+[node name="1f" type="Area2D" parent="Maps/2f-pallet/Warps"]
+position = Vector2(56, -56)
+script = ExtResource("5_tq1t1")
+warp_type = 2
+direction_after_warp = 3
+warp_to = Vector2(-2208, 32)
+move_one_after = true
+sound_effect = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Maps/2f-pallet/Warps/1f"]
+shape = SubResource("RectangleShape2D_chhkl")
+
+[node name="Pallet" type="Sprite2D" parent="Maps"]
+position = Vector2(640, 576)
+scale = Vector2(4, 4)
+texture = ExtResource("4_fn806")
+
+[node name="MapBounds" type="Area2D" parent="Maps/Pallet"]
+script = ExtResource("3_tg78s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Maps/Pallet/MapBounds"]
+shape = SubResource("RectangleShape2D_hg42c")
+
+[node name="Collision" type="StaticBody2D" parent="Maps/Pallet"]
+
+[node name="PHouse" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(-88, -72)
+shape = SubResource("RectangleShape2D_aqst4")
+
+[node name="PHouse2" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(-64, -80)
+shape = SubResource("RectangleShape2D_n864o")
+
+[node name="PHouse3" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(-48, -72)
+shape = SubResource("RectangleShape2D_cub7a")
+
+[node name="RHouse1" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(40, -72)
+shape = SubResource("RectangleShape2D_aqst4")
+
+[node name="RHouse2" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(64, -80)
+shape = SubResource("RectangleShape2D_n864o")
+
+[node name="RHouse3" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(80, -72)
+shape = SubResource("RectangleShape2D_cub7a")
+
+[node name="OakLab4" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(16, 24)
+shape = SubResource("RectangleShape2D_bymit")
+
+[node name="OakLab5" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(48, 8)
+shape = SubResource("RectangleShape2D_vy2if")
+
+[node name="OakLab6" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(72, 24)
+shape = SubResource("RectangleShape2D_d6mkh")
+
+[node name="PSign" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(-104, -56)
+shape = SubResource("RectangleShape2D_bteew")
+
+[node name="Sign" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(-40, 8)
+shape = SubResource("RectangleShape2D_bteew")
+
+[node name="Sign2" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(56, 72)
+shape = SubResource("RectangleShape2D_bteew")
+
+[node name="Log" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(-136, 136)
+shape = SubResource("RectangleShape2D_bteew")
+
+[node name="Log2" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(-40, -136)
+shape = SubResource("RectangleShape2D_bteew")
+
+[node name="Log3" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(8, -136)
+shape = SubResource("RectangleShape2D_bteew")
+
+[node name="Log4" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(-104, -136)
+shape = SubResource("RectangleShape2D_bteew")
+
+[node name="Log5" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(136, -136)
+shape = SubResource("RectangleShape2D_bteew")
+
+[node name="Fence" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(-56, 8)
+shape = SubResource("RectangleShape2D_bteew")
+
+[node name="Fence2" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(-72, 8)
+shape = SubResource("RectangleShape2D_bteew")
+
+[node name="Fence3" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(-88, 8)
+shape = SubResource("RectangleShape2D_bteew")
+
+[node name="Fence4" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(8, 72)
+shape = SubResource("RectangleShape2D_bteew")
+
+[node name="Fence5" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(24, 72)
+shape = SubResource("RectangleShape2D_bteew")
+
+[node name="Fence6" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(40, 72)
+shape = SubResource("RectangleShape2D_bteew")
+
+[node name="Fence7" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(72, 72)
+shape = SubResource("RectangleShape2D_bteew")
+
+[node name="Fence8" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(88, 72)
+shape = SubResource("RectangleShape2D_bteew")
+
+[node name="Logs" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(-96, -120)
+shape = SubResource("RectangleShape2D_orugh")
+
+[node name="Logs4" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(-152, 8)
+shape = SubResource("RectangleShape2D_ds5w7")
+
+[node name="Logs5" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(152, 8)
+shape = SubResource("RectangleShape2D_ds5w7")
+
+[node name="Logs2" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(72, -120)
+shape = SubResource("RectangleShape2D_odb07")
+
+[node name="Logs3" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(56, 136)
+shape = SubResource("RectangleShape2D_vb2wq")
+
+[node name="RSign" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(24, -56)
+shape = SubResource("RectangleShape2D_bteew")
+
+[node name="Water" type="CollisionShape2D" parent="Maps/Pallet/Collision"]
+position = Vector2(-64, 112)
+shape = SubResource("RectangleShape2D_b6oq2")
+
+[node name="Warps" type="Node2D" parent="Maps/Pallet"]
+
+[node name="PHouse" type="Area2D" parent="Maps/Pallet/Warps"]
+position = Vector2(-72, -56)
+script = ExtResource("5_tq1t1")
+warp_type = 2
+direction_after_warp = 2
+warp_to = Vector2(-2464, 480)
+sound_effect = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Maps/Pallet/Warps/PHouse"]
+shape = SubResource("RectangleShape2D_chhkl")
+
+[node name="OLab" type="Area2D" parent="Maps/Pallet/Warps"]
+position = Vector2(40, 40)
+script = ExtResource("5_tq1t1")
+warp_type = 2
+direction_after_warp = 2
+warp_to = Vector2(-1632, 736)
+sound_effect = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Maps/Pallet/Warps/OLab"]
+shape = SubResource("RectangleShape2D_chhkl")
+
+[node name="RHouse" type="Area2D" parent="Maps/Pallet/Warps"]
+position = Vector2(56, -56)
+script = ExtResource("5_tq1t1")
+warp_type = 2
+direction_after_warp = 2
+warp_to = Vector2(-2464, -992)
+sound_effect = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Maps/Pallet/Warps/RHouse"]
+shape = SubResource("RectangleShape2D_chhkl")
+
+[node name="Grass" type="Node2D" parent="Maps/Pallet"]
+position = Vector2(-160, -144)
+scale = Vector2(0.25, 0.25)
+
+[node name="Grass" parent="Maps/Pallet/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(544, 92)
+
+[node name="Grass2" parent="Maps/Pallet/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(608, 92)
+
+[node name="Grass3" parent="Maps/Pallet/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(544, 28)
+
+[node name="Grass4" parent="Maps/Pallet/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(608, 28)
+
+[node name="Rival-house" type="Sprite2D" parent="Maps"]
+position = Vector2(-2432, -1216)
+scale = Vector2(4, 4)
+texture = ExtResource("7_j5m8r")
+
+[node name="MapBounds" type="Area2D" parent="Maps/Rival-house"]
+script = ExtResource("3_tg78s")
+hide = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Maps/Rival-house/MapBounds"]
+shape = SubResource("RectangleShape2D_isc55")
+
+[node name="Warps" type="Node2D" parent="Maps/Rival-house"]
+
+[node name="Pallet" type="Area2D" parent="Maps/Rival-house/Warps"]
+position = Vector2(-8, 56)
+script = ExtResource("5_tq1t1")
+warp_type = 1
+direction_after_warp = 3
+warp_to = Vector2(864, 352)
+move_one_after = true
+sound_effect = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Maps/Rival-house/Warps/Pallet"]
+position = Vector2(-8, 0)
+shape = SubResource("RectangleShape2D_2585o")
+
+[node name="Collision" type="StaticBody2D" parent="Maps/Rival-house"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Maps/Rival-house/Collision"]
+position = Vector2(0, -72)
+shape = SubResource("RectangleShape2D_t2scs")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Maps/Rival-house/Collision"]
+position = Vector2(0, 72)
+shape = SubResource("RectangleShape2D_t2scs")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Maps/Rival-house/Collision"]
+position = Vector2(-72, 0)
+shape = SubResource("RectangleShape2D_ptf0f")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Maps/Rival-house/Collision"]
+position = Vector2(72, 0)
+shape = SubResource("RectangleShape2D_ptf0f")
+
+[node name="Oak-lab" type="Sprite2D" parent="Maps"]
+position = Vector2(-1664, 384)
+scale = Vector2(4, 4)
+texture = ExtResource("10_061fw")
+
+[node name="Collision" type="StaticBody2D" parent="Maps/Oak-lab"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Maps/Oak-lab/Collision"]
+position = Vector2(-88, 0)
+shape = SubResource("RectangleShape2D_5pp6v")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Maps/Oak-lab/Collision"]
+position = Vector2(88, 0)
+shape = SubResource("RectangleShape2D_5pp6v")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Maps/Oak-lab/Collision"]
+position = Vector2(0, 104)
+shape = SubResource("RectangleShape2D_l3586")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Maps/Oak-lab/Collision"]
+position = Vector2(0, -96)
+shape = SubResource("RectangleShape2D_shak5")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Maps/Oak-lab/Collision"]
+position = Vector2(-48, -72)
+shape = SubResource("RectangleShape2D_movng")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Maps/Oak-lab/Collision"]
+position = Vector2(48, -72)
+shape = SubResource("RectangleShape2D_movng")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Maps/Oak-lab/Collision"]
+position = Vector2(-48, 24)
+shape = SubResource("RectangleShape2D_movng")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Maps/Oak-lab/Collision"]
+position = Vector2(-48, 8)
+shape = SubResource("RectangleShape2D_movng")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Maps/Oak-lab/Collision"]
+position = Vector2(48, 24)
+shape = SubResource("RectangleShape2D_movng")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Maps/Oak-lab/Collision"]
+position = Vector2(48, 8)
+shape = SubResource("RectangleShape2D_movng")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Maps/Oak-lab/Collision"]
+position = Vector2(40, -40)
+shape = SubResource("RectangleShape2D_ng671")
+
+[node name="MapBounds" type="Area2D" parent="Maps/Oak-lab"]
+script = ExtResource("3_tg78s")
+hide = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Maps/Oak-lab/MapBounds"]
+shape = SubResource("RectangleShape2D_qu6j7")
+
+[node name="Warps" type="Node2D" parent="Maps/Oak-lab"]
+
+[node name="Pallet" type="Area2D" parent="Maps/Oak-lab/Warps"]
+position = Vector2(8, 88)
+script = ExtResource("5_tq1t1")
+warp_type = 1
+direction_after_warp = 3
+warp_to = Vector2(800, 736)
+move_one_after = true
+sound_effect = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Maps/Oak-lab/Warps/Pallet"]
+position = Vector2(-8, 0)
+shape = SubResource("RectangleShape2D_2585o")
+
+[node name="Player" parent="." instance=ExtResource("5_ylivs")]
+position = Vector2(352, 416)
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(800, 736)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_sw3rl")
+
+[connection signal="area_entered" from="Maps/Route-1/MapBounds" to="." method="_on_map_bounds_area_entered"]
+[connection signal="area_entered" from="Maps/Route-1/MapBounds" to="Maps/Route-1/MapBounds" method="_on_area_entered"]
+[connection signal="area_exited" from="Maps/Route-1/MapBounds" to="Maps/Route-1/MapBounds" method="_on_area_exited"]
+[connection signal="area_entered" from="Maps/1f-pallet/MapBounds" to="." method="_on_map_bounds_area_entered"]
+[connection signal="area_entered" from="Maps/1f-pallet/MapBounds" to="Maps/1f-pallet/MapBounds" method="_on_area_entered"]
+[connection signal="area_exited" from="Maps/1f-pallet/MapBounds" to="Maps/1f-pallet/MapBounds" method="_on_area_exited"]
+[connection signal="area_entered" from="Maps/1f-pallet/Warps/2f" to="Maps/1f-pallet/Warps/2f" method="_on_area_entered"]
+[connection signal="area_entered" from="Maps/1f-pallet/Warps/Pallet" to="Maps/1f-pallet/Warps/Pallet" method="_on_area_entered"]
+[connection signal="area_entered" from="Maps/2f-pallet/MapBounds" to="." method="_on_map_bounds_area_entered"]
+[connection signal="area_entered" from="Maps/2f-pallet/MapBounds" to="Maps/2f-pallet/MapBounds" method="_on_area_entered"]
+[connection signal="area_exited" from="Maps/2f-pallet/MapBounds" to="Maps/2f-pallet/MapBounds" method="_on_area_exited"]
+[connection signal="area_entered" from="Maps/2f-pallet/Warps/1f" to="Maps/2f-pallet/Warps/1f" method="_on_area_entered"]
+[connection signal="area_entered" from="Maps/Pallet/MapBounds" to="." method="_on_map_bounds_area_entered"]
+[connection signal="area_entered" from="Maps/Pallet/MapBounds" to="Maps/Pallet/MapBounds" method="_on_area_entered"]
+[connection signal="area_exited" from="Maps/Pallet/MapBounds" to="Maps/Pallet/MapBounds" method="_on_area_exited"]
+[connection signal="area_entered" from="Maps/Pallet/Warps/PHouse" to="Maps/Pallet/Warps/PHouse" method="_on_area_entered"]
+[connection signal="area_entered" from="Maps/Pallet/Warps/OLab" to="Maps/Pallet/Warps/OLab" method="_on_area_entered"]
+[connection signal="area_entered" from="Maps/Pallet/Warps/RHouse" to="Maps/Pallet/Warps/RHouse" method="_on_area_entered"]
+[connection signal="area_entered" from="Maps/Rival-house/MapBounds" to="." method="_on_map_bounds_area_entered"]
+[connection signal="area_entered" from="Maps/Rival-house/MapBounds" to="Maps/Rival-house/MapBounds" method="_on_area_entered"]
+[connection signal="area_exited" from="Maps/Rival-house/MapBounds" to="Maps/Rival-house/MapBounds" method="_on_area_exited"]
+[connection signal="area_entered" from="Maps/Rival-house/Warps/Pallet" to="Maps/Rival-house/Warps/Pallet" method="_on_area_entered"]
+[connection signal="area_entered" from="Maps/Oak-lab/MapBounds" to="." method="_on_map_bounds_area_entered"]
+[connection signal="area_entered" from="Maps/Oak-lab/MapBounds" to="Maps/Oak-lab/MapBounds" method="_on_area_entered"]
+[connection signal="area_exited" from="Maps/Oak-lab/MapBounds" to="Maps/Oak-lab/MapBounds" method="_on_area_exited"]
+[connection signal="area_entered" from="Maps/Oak-lab/Warps/Pallet" to="Maps/Oak-lab/Warps/Pallet" method="_on_area_entered"]
