@@ -78,7 +78,6 @@ func _physics_process(delta: float) -> void:
 		if can_move:
 			handleInput()
 		if input_direction == Vector2.ZERO and input_direction_2 == Vector2.ZERO:
-			print("ASD")
 			anim_state.travel("Idle", false)
 	match player_direction:
 		directions.UP:

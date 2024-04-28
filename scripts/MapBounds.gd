@@ -4,6 +4,7 @@ extends Area2D
 @export var music : AudioStream
 @export var place_name : String
 @export var hide : bool
+@export var wild_pokemon_table : Array
 var playerAreaCount = 0
 
 @onready var pllr = get_tree().root.get_node("World").get_node("Player")

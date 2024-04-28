@@ -10,6 +10,8 @@ func _process(delta):
 		if !anim:
 			pllr.playGrass()
 			anim = true
+		if !pllr.is_moving:
+			pass
 	else:
 		$Sprite.visible = false
 		anim = false

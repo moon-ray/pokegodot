@@ -280,6 +280,198 @@ position = Vector2(544, 28)
 [node name="Grass4" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
 position = Vector2(608, 28)
 
+[node name="Grass41" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(672, -548)
+
+[node name="Grass42" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(736, -548)
+
+[node name="Grass43" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(672, -612)
+
+[node name="Grass44" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(736, -612)
+
+[node name="Grass45" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(800, -548)
+
+[node name="Grass46" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(864, -548)
+
+[node name="Grass47" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(800, -612)
+
+[node name="Grass48" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(864, -612)
+
+[node name="Grass49" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(672, -676)
+
+[node name="Grass50" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(736, -676)
+
+[node name="Grass51" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(672, -740)
+
+[node name="Grass52" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(736, -740)
+
+[node name="Grass53" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(800, -676)
+
+[node name="Grass54" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(864, -676)
+
+[node name="Grass55" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(800, -740)
+
+[node name="Grass56" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(864, -740)
+
+[node name="Grass57" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(800, -1316)
+
+[node name="Grass58" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(864, -1316)
+
+[node name="Grass59" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(800, -1380)
+
+[node name="Grass60" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(864, -1380)
+
+[node name="Grass61" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(928, -1316)
+
+[node name="Grass62" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(992, -1316)
+
+[node name="Grass63" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(928, -1380)
+
+[node name="Grass64" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(992, -1380)
+
+[node name="Grass65" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(800, -1188)
+
+[node name="Grass66" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(864, -1188)
+
+[node name="Grass67" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(800, -1252)
+
+[node name="Grass68" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(864, -1252)
+
+[node name="Grass69" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(928, -1188)
+
+[node name="Grass70" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(992, -1188)
+
+[node name="Grass71" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(928, -1252)
+
+[node name="Grass72" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(992, -1252)
+
+[node name="Grass73" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(544, -1700)
+
+[node name="Grass74" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(608, -1700)
+
+[node name="Grass75" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(544, -1764)
+
+[node name="Grass76" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(608, -1764)
+
+[node name="Grass77" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(672, -1700)
+
+[node name="Grass78" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(736, -1700)
+
+[node name="Grass79" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(672, -1764)
+
+[node name="Grass80" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(736, -1764)
+
+[node name="Grass81" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(800, -1700)
+
+[node name="Grass82" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(864, -1700)
+
+[node name="Grass83" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(800, -1764)
+
+[node name="Grass84" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(864, -1764)
+
+[node name="Grass85" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(928, -1700)
+
+[node name="Grass86" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(992, -1700)
+
+[node name="Grass87" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(928, -1764)
+
+[node name="Grass88" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(992, -1764)
+
+[node name="Grass89" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(544, -1572)
+
+[node name="Grass90" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(608, -1572)
+
+[node name="Grass91" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(544, -1636)
+
+[node name="Grass92" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(608, -1636)
+
+[node name="Grass93" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(672, -1572)
+
+[node name="Grass94" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(736, -1572)
+
+[node name="Grass95" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(672, -1636)
+
+[node name="Grass96" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(736, -1636)
+
+[node name="Grass97" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(800, -1572)
+
+[node name="Grass98" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(864, -1572)
+
+[node name="Grass99" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(800, -1636)
+
+[node name="Grass100" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(864, -1636)
+
+[node name="Grass101" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(928, -1572)
+
+[node name="Grass102" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(992, -1572)
+
+[node name="Grass103" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(928, -1636)
+
+[node name="Grass104" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
+position = Vector2(992, -1636)
+
 [node name="Grass9" parent="Maps/Route-1/Grass" instance=ExtResource("8_6nk5q")]
 position = Vector2(160, -164)
 
